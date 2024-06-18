@@ -1,0 +1,41 @@
+public class Customer {
+    private int Accno;
+    private String Accname;
+    private int bal=10000;
+    
+    public synchronized void deposit(int a)
+    {
+        bal+=a;
+        System.out.println(a+" deposited. current bal:"+bal);
+        notify();
+    }
+    public synchronized void withdraw(int a)
+    {
+        System.out.println("Withdrawal amount requested: " + a);
+        if(bal<a)
+        {
+            System.out.println("Insufficient funds!");
+            try
+            {
+                wait();
+            }
+            catch(InterruptedException e)
+            {
+                System.out.print("Thread Interuupted");
+            }
+        }
+        bal-=a;
+        System.out.println("Withdraw successful! New Bal:"+bal);
+    }
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Customer obj=new Customer();
+        new Thread(()->obj.withdraw(12000)).start();
+        new Thread(()->obj.deposit(3000)).start(); 
+    }
+}
+Input:
+Withdrawal amount requested: 12000
+Insufficient funds!
+3000 deposited. current bal:13000
+Withdraw successful! New Bal:1000
