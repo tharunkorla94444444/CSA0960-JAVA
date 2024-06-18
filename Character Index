@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Practice {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input=new Scanner(System.in);
+        String s=input.nextLine();
+        char ch=input.next().charAt(0);
+        int index=-1;
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)==ch)
+            {
+                index=i;
+                break;
+            }
+        }
+        if(index!=-1)
+        {
+            System.out.println("Found at "+(index+1));
+        }
+        else
+        {
+            System.out.println("Not Found");
+        }
+        
+    }
+}
+Input:
+Hello World
+w
+Output:
+Found at 2
