@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Pp {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = input.nextInt();
+        }
+        int Gcd = findgcd(arr, n);
+        System.out.println("Gcd: " + Gcd);
+        int mul = 1;
+        for (int i = 0; i < n; i++) {
+            mul = mul * arr[i];
+        }
+        int lcm = (int) ((long) mul / Gcd); // Cast mul to long before division
+        System.out.println("Lcm: " + lcm);
+    }
+
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return gcd(b, a % b);
+        }
+    }
+
+    public static int findgcd(int[] arr, int n) {
+        int res = arr[0];
+        for (int i = 0; i < n; i++) {
+            res = gcd(res, arr[i]);
+            if (res == 1) {
+                return 1;
+            }
+        }
+        return res;
+    }
+}
+Input:
+n=3
+2
+4
+6
+Output:
+Gcd: 2
+Lcm: 24
