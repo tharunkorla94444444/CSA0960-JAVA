@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Practice {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input=new Scanner(System.in);
+        int r=input.nextInt();
+        int c=input.nextInt();
+        int[][] m1=new int[r][c];
+        int[][] m2=new int[r][c];
+        int[][] res=new int[r][c];
+        
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                m1[i][j]=input.nextInt();
+            }
+        }
+        
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                m2[i][j]=input.nextInt();
+            }
+        }
+        
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                res[i][j]=0;
+                for(int k=0;k<c;k++)
+                {
+                    res[i][j]+=m1[i][k]*m2[k][j];
+                }
+                System.out.print(res[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+}
+Input:
+No. of rows: 2
+No. of cols: 2
+1
+2
+3
+4
+
+1
+2
+3
+4
+Output:
+7	  10	
+15	22	
