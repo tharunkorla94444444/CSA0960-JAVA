@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Pp {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input=new Scanner(System.in);
+        String year=input.nextLine();
+        String[] a=year.split("/");
+        String d=a[2];
+        int num=Integer.parseInt(d);
+        if(num%4==0 && num%100!=0 || num%400==0)
+        {
+            System.out.print("Leap year");
+        }
+        else
+        {
+            System.out.print("Not a leap year");
+        }
+    }
+}
+Input:
+14/05/2005
+Output:
+Not a leap year
