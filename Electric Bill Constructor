@@ -1,0 +1,48 @@
+class EleBill
+{
+    private int cno;
+    private String cname;
+    private int cmr;
+    private int pmr;
+    public EleBill(int no,String name,int curr,int pre)
+    {
+        this.cno=no;
+        this.cname=name;
+        this.cmr=curr;
+        this.pmr=pre;
+    }
+    public double calcBill()
+    {
+        int u=cmr-pmr;
+        double bill=0;
+        if(u<100)
+        {
+            bill=u*1;
+        }
+        else if(u>100 && u<=200)
+        {
+            bill=100*1+(u-100)*2.50;
+        }
+        else if(u>200 && u<=500)
+        {
+            bill=100*1+100*2.50+(u-200)*4;
+        }
+        else
+        {
+            bill=100*1+100*2.50+200*4+(u-500)*6;
+        }
+        return bill;
+    }
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        EleBill obj=new EleBill(123,"Anu",1500,700);
+        double amount=obj.calcBill();
+        System.out.println("Amount:"+amount);
+        
+    }
+}
+Output:
+Amount:2950.0
