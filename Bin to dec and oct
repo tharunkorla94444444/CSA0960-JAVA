@@ -1,0 +1,31 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bintodecoct;
+
+/**
+ *
+ * @author harsh
+ */
+import java.util.Scanner;
+public class BintoDecOct {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input=new Scanner(System.in);
+        String bin=input.nextLine();
+        int dec=Integer.parseInt(bin,2);
+        System.out.println("dec:"+dec);
+        int decforOct=Integer.parseInt(bin,2);
+        String oct=Integer.toOctalString(decforOct);
+        System.out.println("oct:"+oct);
+    }
+}
+Output:
+1101
+dec:13
+oct:15
