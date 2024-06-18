@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Pp {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input=new Scanner(System.in);
+        int n=input.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=input.nextInt();
+        }
+        System.out.print("Composite numbers:");
+        for(int i=0;i<n;i++)
+        {
+            int c=0;
+            for(int j=1;j<=arr[i];j++)
+            {
+                if(arr[i]%j==0)
+                {
+                    c++;
+                }
+            }
+            if(c>2)
+            {
+                System.out.print(arr[i]+" ");
+            }
+        }
+    }
+}
+Input:
+enter n: 6
+4
+7
+6
+8
+9
+3
+Output:
+Composite numbers:4 6 8 9
