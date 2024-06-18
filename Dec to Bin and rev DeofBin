@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Pp {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input=new Scanner(System.in);
+        int dec=input.nextInt();
+        String bin=Integer.toBinaryString(dec);
+        StringBuilder rev=new StringBuilder(bin).reverse();
+        int decofBin=Integer.parseInt(rev.toString(),2);
+        System.out.println("Bin:"+bin);
+        System.out.println("DecBin:"+decofBin);
+    }
+}
+Input:
+11
+Output:
+Bin:1011
+DecBin:13
