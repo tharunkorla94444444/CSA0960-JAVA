@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class HelloWorld{
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        try
+        {
+            System.out.println("enter amount:");
+            double amount=input.nextInt();
+            System.out.println("Enter rate");
+            double rate=input.nextInt();
+            double intrest=(amount*rate)/100;
+            System.out.println("Intrest:"+intrest);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error");
+        }
+        finally
+        {
+            System.out.println("Thanks for using pf");
+        }
+    }
+}
+Input:
+enter amount:
+1000
+Enter rate
+3
+Output:
+Intrest:30.0
+Thanks for using pf
